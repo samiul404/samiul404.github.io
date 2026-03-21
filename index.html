@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samiul Khan | Cybersecurity Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --cyber-red: #cc0000; /* Main accent - slightly deeper for better text readability */
+            --brighter-red: #ff3333; /* For glows and highlights */
+            --dark-void: #030303; /* Near-black background */
+            --glass-border: rgba(204, 0, 0, 0.2); /* Deep red border */
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--dark-void);
+            color: #efefef;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* The Matrix Canvas Container */
+        #matrix_canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place behind all content */
+            opacity: 0.15; /* Subtly integrated */
+            pointer-events: none; /* Let clicks pass through */
+        }
+
+        /* Glassmorphism Cards */
+        .cyber-card {
+            background: rgba(10, 10, 12, 0.95);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .cyber-card:hover {
+            border-color: var(--brighter-red);
+            box-shadow: 0 0 40px rgba(255, 51, 51, 0.15);
+            transform: scale(1.02);
+        }
+
+        /* Red Glow Buttons */
+        .btn-red-glow {
+            border: 1px solid var(--cyber-red);
+            background: rgba(204, 0, 0, 0.05);
+            transition: 0.3s ease;
+            color: var(--brighter-red);
+        }
+
+        .btn-red-glow:hover {
+            background: var(--cyber-red);
+            color: white;
+            box-shadow: 0 0 25px var(--brighter-red);
+        }
+
+        /* Brighter red for icons and tags */
+        .text-cyber-accent { color: var(--brighter-red); }
+        .border-cyber-accent { border-color: var(--brighter-red); }
+        .bg-cyber-accent { background-color: var(--brighter-red); }
+    </style>
+</head>
+<body>
+
+    <canvas id="matrix_canvas"></canvas>
+
+    <nav class="fixed w-full z-[100] top-0 py-6 px-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center cyber-card px-8 py-3 rounded-2xl">
+            <a href="#" class="mono text-xl font-bold tracking-tighter flex items-center gap-2">
+                <span class="w-2 h-2 bg-cyber-accent rounded-full animate-pulse"></span>
+                SAMIUL<span class="text-cyber-accent">.KHAN</span>
+            </a>
+            <div class="hidden md:flex space-x-10 text-[11px] font-bold uppercase tracking-[0.2em]">
+                <a href="#home" class="hover:text-cyber-accent transition">Initialize</a>
+                <a href="#expertise" class="hover:text-cyber-accent transition">Capabilities</a>
+                <a href="#lab" class="hover:text-cyber-accent transition">Lab</a>
+                <a href="#contact" class="hover:text-cyber-accent transition">Connect</a>
+            </div>
+            <button class="mono text-[10px] border border-red-950/50 px-4 py-1.5 rounded text-cyber-accent">v1.0.42_SEC</button>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative">
+        <div class="absolute w-[500px] h-[500px] bg-red-600/5 blur-[120px] rounded-full -z-10"></div>
+        
+        <div class="mb-10 relative group">
+            <div class="absolute -inset-1 bg-cyber-accent rounded-full opacity-20 group-hover:opacity-100 blur transition duration-500"></div>
+            <img src="samiul-khan1.png" alt="Md. Samiul Khan" class="relative w-36 h-36 rounded-full border-4 border-[var(--dark-void)] object-cover">
+            <div class="absolute bottom-0 right-0 w-6 h-6 bg-green-500 rounded-full border-4 border-[var(--dark-void)] animate-pulse"></div>
+        </div>
+
+        <h2 class="mono text-cyber-accent text-sm tracking-[0.6em] mb-6 uppercase">System Breach Protocol Active</h2>
+        <h1 class="text-6xl md:text-9xl font-black mb-6 tracking-tight leading-[0.9]">
+            MD. SAMIUL <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-white">KHAN</span>
+        </h1>
+        <p class="max-w-2xl text-gray-400 text-lg md:text-xl mb-12 font-light leading-relaxed">
+            Cybersecurity Enthusiast focused on <span class="text-white border-b border-cyber-accent">Offensive Security</span> and 
+            securing high-scale web infrastructures.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6">
+            <a href="#expertise" class="btn-red-glow px-12 py-5 rounded-xl font-bold uppercase tracking-widest text-xs">Access Intel</a>
+            <a href="#contact" class="cyber-card px-12 py-5 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-white/5">Signal Handshake</a>
+        </div>
+    </section>
+
+    <section id="expertise" class="max-w-6xl mx-auto py-32 px-6">
+        <div class="flex items-center gap-6 mb-16">
+            <h2 class="text-4xl font-black uppercase italic tracking-tighter">Field <span class="text-cyber-accent underline">Expertise</span></h2>
+            <div class="flex-1 h-[1px] bg-red-900/30"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="cyber-card p-10 rounded-[2rem] group">
+                <div class="w-14 h-14 bg-red-600/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-cyber-accent group-hover:text-white transition-all duration-500 text-cyber-accent">
+                    <i data-lucide="globe" class="w-7 h-7"></i>
+                </div>
+                <h3 class="mono font-bold text-xl mb-4">Web Pentesting</h3>
+                <p class="text-sm text-gray-500 leading-relaxed mb-6">Securing modern web applications by identifying vulnerabilities before malicious actors do.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] mono border border-white/5 px-2 py-1 rounded">Burp Suite</span>
+                    <span class="text-[10px] mono border border-white/5 px-2 py-1 rounded">Fuzzing</span>
+                </div>
+            </div>
+
+            <div class="cyber-card p-10 rounded-[2rem] group">
+                <div class="w-14 h-14 bg-red-600/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-cyber-accent group-hover:text-white transition-all duration-500 text-cyber-accent">
+                    <i data-lucide="activity" class="w-7 h-7"></i>
+                </div>
+                <h3 class="mono font-bold text-xl mb-4">Vulnerability Assessment</h3>
+                <p class="text-sm text-gray-500 leading-relaxed mb-6">Systematic analysis of security weaknesses to identify and prioritize risks within your environment.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] mono border border-white/5 px-2 py-1 rounded">Burp Suite</span>
+                    <span class="text-[10px] mono border border-white/5 px-2 py-1 rounded">Nmap</span>
+                </div>
+            </div>
+
+            <div class="cyber-card p-10 rounded-[2rem] group">
+                <div class="w-14 h-14 bg-red-600/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-cyber-accent group-hover:text-white transition-all duration-500 text-cyber-accent">
+                    <i data-lucide="shield-alert" class="w-7 h-7"></i>
+                </div>
+                <h3 class="mono font-bold text-xl mb-4"</h3>Malware Removal</h3>
+                <p class="text-sm text-gray-500 leading-relaxed mb-6">Deep-level cleaning and remediation of systems compromised by Trojans, Ransomware, and Spyware.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] mono border border-white/5 px-2 py-1 rounded">Wordpress</span>
+                    <span class="text-[10px] mono border border-white/5 px-2 py-1 rounded">Website</span>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section id="lab" class="max-w-6xl mx-auto py-20 px-6">
+        <div class="cyber-card p-12 rounded-[2.5rem] flex flex-col md:flex-row items-center gap-10">
+            <div class="w-16 h-16 bg-red-600/10 rounded-2xl flex items-center justify-center text-cyber-accent">
+                <i data-lucide="binary" class="w-8 h-8"></i>
+            </div>
+            <div class="flex-1">
+                <h3 class="text-2xl font-bold mb-2">Vulnerability Scanner</h3>
+                <p class="text-gray-500 text-sm">A Python-based toolkit designed to scan local networks for open ports.</p>
+            </div>
+            <div class="flex items-center text-cyber-accent text-sm mono">
+                Active Project <i data-lucide="arrow-right" class="ml-2 w-4 h-4 animate-pulse"></i>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-32 px-6 border-t border-white/5 text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto z-10 relative">
+            <h2 class="text-5xl md:text-7xl font-black mb-12 tracking-tighter">Establishing<br> <span class="text-cyber-accent">Connection..</span></h2>
+            <p class="mono text-gray-500 mb-12 uppercase tracking-widest text-xs">Waiting for incoming packets...</p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <a href="https://www.linkedin.com/in/samiul-khan-319736303/" target="_blank" class="btn-red-glow py-6 rounded-2xl flex flex-col items-center gap-3">
+        <i data-lucide="linkedin" class="w-6 h-6"></i>
+        <span class="mono text-[10px] uppercase font-bold tracking-widest">LinkedIn</span>
+    </a>
+
+    <a href="https://mail.google.com/mail/u/?authuser=samiulkhansami77@gmail.com" class="btn-red-glow py-6 rounded-2xl flex flex-col items-center gap-3">
+        <i data-lucide="mail" class="w-6 h-6"></i>
+        <span class="mono text-[10px] uppercase font-bold tracking-widest">Email</span>
+    </a>
+
+    <a href="https://discord.com/users/947349789278879795" target="_blank" class="btn-red-glow py-6 rounded-2xl flex flex-col items-center gap-3">
+        <i data-lucide="message-square" class="w-6 h-6"></i>
+        <span class="mono text-[10px] uppercase font-bold tracking-widest">Discord</span>
+    </a>
+
+    <a href="https://www.instagram.com/treckx.47/" target="_blank" class="btn-red-glow py-6 rounded-2xl flex flex-col items-center gap-3">
+        <i data-lucide="instagram" class="w-6 h-6"></i>
+        <span class="mono text-[10px] uppercase font-bold tracking-widest">Instagram</span>
+    </a>
+
+    <a href="https://www.facebook.com/sami6911" target="_blank" class="btn-red-glow py-6 rounded-2xl flex flex-col items-center gap-3">
+        <i data-lucide="facebook" class="w-6 h-6"></i>
+        <span class="mono text-[10px] uppercase font-bold tracking-widest">Facebook</span>
+    </a>
+</div>
+            </div>
+            
+            <p class="mt-24 mono text-[9px] uppercase tracking-[0.4em] text-gray-700">© 2026 MD. SAMIUL KHAN — CYBER SECURITY ENTHUSIAST</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- LUCIDE ICONS ---
+        lucide.createIcons();
+
+        // --- DYNAMIC RED MATRIX RAIN ---
+        const canvas = document.getElementById('matrix_canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set full screen canvas
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+
+        // Use characters like the image: letters, numbers, and symbols
+        const matrixChars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ<>//:\\*&{}[]!@#$%^".split('');
+
+        const fontSize = 16;
+        const columns = canvas.width / fontSize; // number of columns for the rain
+        const drops = [];
+
+        // Initialize x coordinates for each column, set y-coordinate to 1 (top)
+        for(let x = 0; x < columns; x++) {
+            drops[x] = 1; 
+        }
+
+        // Draw the characters
+        function drawMatrix() {
+            // Set background color with slight transparency to create trail effect
+            ctx.fillStyle = "rgba(3, 3, 3, 0.05)"; // Must match var(--dark-void) exactly
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Set character color (deep red matching var(--cyber-red))
+            ctx.fillStyle = "#cc0000"; 
+            ctx.font = fontSize + "px 'JetBrains Mono'";
+
+            // Loop over drops
+            for(let i = 0; i < drops.length; i++) {
+                // Get a random character
+                const text = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+                
+                // Draw character (x = column index * fontSize, y = drop value * fontSize)
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                // Sending drop back to the top randomly after it has crossed the screen
+                // The random factor makes the rain feel chaotic and natural
+                if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                // Increment y-coordinate (make the drop fall)
+                drops[i]++;
+            }
+        }
+
+        // Set animation interval (lower value = faster rain)
+        setInterval(drawMatrix, 35);
+
+        // Handle resize properly
+        window.addEventListener('resize', () => {
+            canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+            // (Drops initialization would need adjustment for column changes if desired)
+        });
+
+
+        // --- REVEAL ON SCROLL ---
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = "0";
+            section.style.transform = "translateY(30px)";
+            section.style.transition = "all 0.8s ease-out";
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
