@@ -65,6 +65,54 @@
             color: white;
             box-shadow: 0 0 25px var(--brighter-red);
         }
+        
+ 
+        /* Logo Glitch Effect */
+        .logo-glitch {
+            position: relative;
+            text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                        -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+                        0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+            animation: glitch-logo 500ms infinite;
+        }
+
+        @keyframes glitch-logo {
+            0% { text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.05em -0.025em 0 rgba(0,255,0,.75), 0.025em 0.05em 0 rgba(0,0,255,.75); }
+            14% { text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.05em -0.025em 0 rgba(0,255,0,.75), 0.025em 0.05em 0 rgba(0,0,255,.75); }
+            15% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,.75), 0.025em 0.025em 0 rgba(0,255,0,.75), -0.05em -0.05em 0 rgba(0,0,255,.75); }
+            49% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,.75), 0.025em 0.025em 0 rgba(0,255,0,.75), -0.05em -0.05em 0 rgba(0,0,255,.75); }
+            50% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,.75), 0.05em 0 0 rgba(0,255,0,.75), 0 -0.05em 0 rgba(0,0,255,.75); }
+            99% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,.75), 0.05em 0 0 rgba(0,255,0,.75), 0 -0.05em 0 rgba(0,0,255,.75); }
+            100% { text-shadow: -0.025em 0 0 rgba(255,0,0,.75), -0.025em -0.025em 0 rgba(0,255,0,.75), -0.025em -0.05em 0 rgba(0,0,255,.75); }
+        }
+
+        /* Scanning Line */
+        .nav-scan {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--brighter-red), transparent);
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        #typewriter-logo::after {
+    content: "|";
+    color: var(--brighter-red);
+    animation: blink 0.8s infinite;
+    font-weight: normal;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
 
         /* Brighter red for icons and tags */
         .text-cyber-accent { color: var(--brighter-red); }
@@ -75,20 +123,58 @@
 <body>
 
     <canvas id="matrix_canvas"></canvas>
+    
+<nav id="main-nav" class="fixed w-full z-[100] top-0 transition-all duration-500 border-b border-red-900/10">
+        <div class="absolute inset-0 bg-[#030303]/40 backdrop-blur-xl -z-10"></div>
+        <div class="nav-scan"></div>
 
-    <nav class="fixed w-full z-[100] top-0 py-6 px-6">
-        <div class="max-w-6xl mx-auto flex justify-between items-center cyber-card px-8 py-3 rounded-2xl">
-            <a href="#" class="mono text-xl font-bold tracking-tighter flex items-center gap-2">
-                <span class="w-2 h-2 bg-cyber-accent rounded-full animate-pulse"></span>
-                SAMIUL<span class="text-cyber-accent">.KHAN</span>
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="mono text-2xl font-black tracking-[ -0.1em] flex items-center gap-3 group">
+                <div class="relative w-8 h-8">
+                    <div class="absolute inset-0 border-2 border-cyber-accent rounded-sm rotate-45 group-hover:rotate-180 transition-transform duration-700"></div>
+                    <div class="absolute inset-0 flex items-center justify-center text-[10px] text-cyber-accent font-bold">SK</div>
+                </div>
+                <span class="logo-glitch">SAMIUL<span class="text-cyber-accent">.KHAN</span></span>
             </a>
-            <div class="hidden md:flex space-x-10 text-[11px] font-bold uppercase tracking-[0.2em]">
-                <a href="#home" class="hover:text-cyber-accent transition">Initialize</a>
-                <a href="#expertise" class="hover:text-cyber-accent transition">Capabilities</a>
-                <a href="#lab" class="hover:text-cyber-accent transition">Lab</a>
-                <a href="#contact" class="hover:text-cyber-accent transition">Connect</a>
+            
+            <div class="hidden md:flex items-center">
+                <div class="h-4 w-[1px] bg-red-900/40 mx-6"></div>
+                <div class="flex space-x-8 text-[10px] font-bold uppercase tracking-[0.3em]">
+                    <a href="#home" class="group relative py-2">
+                        <span class="hover:text-cyber-accent transition-colors">Initialize</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-cyber-accent transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#expertise" class="group relative py-2">
+                        <span class="hover:text-cyber-accent transition-colors">Capabilities</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-cyber-accent transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#lab" class="group relative py-2">
+                        <span class="hover:text-cyber-accent transition-colors">Research Lab</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-cyber-accent transition-all group-hover:w-full"></span>
+                    </a>
+                </div>
+                <div class="h-4 w-[1px] bg-red-900/40 mx-6"></div>
+                
+                <a href="#contact" class="px-5 py-2 border border-cyber-accent/30 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-cyber-accent hover:text-white transition-all">
+                    Establish Link
+                </a>
             </div>
-            <button class="mono text-[10px] border border-red-950/50 px-4 py-1.5 rounded text-cyber-accent">v1.0.42_SEC</button>
+
+            <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-2">
+                <div class="w-6 h-[2px] bg-cyber-accent"></div>
+                <div class="w-4 h-[2px] bg-white self-end"></div>
+                <div class="w-6 h-[2px] bg-cyber-accent"></div>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-[#030303]/fb backdrop-blur-2xl z-50 flex flex-col justify-center items-center gap-12 text-2xl font-black italic uppercase tracking-tighter">
+             <button id="menu-close" class="absolute top-8 right-8 text-cyber-accent">
+                <i data-lucide="x" class="w-10 h-10"></i>
+             </button>
+             <a href="#home" class="mobile-link hover:text-cyber-accent transition">Initialize</a>
+             <a href="#expertise" class="mobile-link hover:text-cyber-accent transition">Capabilities</a>
+             <a href="#lab" class="mobile-link hover:text-cyber-accent transition">Research Lab</a>
+             <a href="#contact" class="mobile-link text-cyber-accent">Establish Link</a>
         </div>
     </nav>
 
@@ -193,10 +279,6 @@
         <span class="mono text-[10px] uppercase font-bold tracking-widest">Email</span>
     </a>
 
-    <a href="https://discord.com/users/947349789278879795" target="_blank" class="btn-red-glow py-6 rounded-2xl flex flex-col items-center gap-3">
-        <i data-lucide="message-square" class="w-6 h-6"></i>
-        <span class="mono text-[10px] uppercase font-bold tracking-widest">Discord</span>
-    </a>
 
     <a href="https://www.instagram.com/treckx.47/" target="_blank" class="btn-red-glow py-6 rounded-2xl flex flex-col items-center gap-3">
         <i data-lucide="instagram" class="w-6 h-6"></i>
@@ -215,7 +297,7 @@
     </footer>
 
     <script>
-        // --- LUCIDE ICONS ---
+      // --- LUCIDE ICONS ---
         lucide.createIcons();
 
         // --- DYNAMIC RED MATRIX RAIN ---
@@ -295,6 +377,61 @@
             section.style.transition = "all 0.8s ease-out";
             observer.observe(section);
         });
-    </script>
-</body>
+        
+        
+        
+        const nav = document.getElementById('main-nav');
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Scroll Effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                nav.classList.add('h-16', 'bg-[#030303]/95');
+                nav.classList.remove('h-20');
+            } else {
+                nav.classList.remove('h-16', 'bg-[#030303]/95');
+                nav.classList.add('h-20');
+            }
+        });
+
+        // Mobile Menu Toggles
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });  
+        
+        // --- TYPEWRITER EFFECT FOR LOGO ---
+             const text = "SAMIUL.KHAN";
+             const speed = 150; // Milliseconds per character
+             let i = 0;
+
+             function typeWriter() {
+             if (i < text.length) {
+             const logoElement = document.getElementById("typewriter-logo");
+              // Create the "typing" look by adding the next character
+             if(text.charAt(i) === ".") {
+              logoElement.innerHTML += `<span class="text-cyber-accent">.</span>`;
+            } else {
+            logoElement.innerHTML += text.charAt(i);
+        }
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+}
+
+// Start the effect on load
+window.onload = () => {
+    typeWriter();
+};
+         </script>
+      </body>
 </html>
